@@ -13,6 +13,6 @@
 1. **Set** the variables in `test.sh`
 
 ## Actions
-- **Tasks: Run Build Task** to build the program (output in `/bin`)
+- **Tasks: Run Build Task** to build the program (output in `bin/`)
 - **Run Menu: Start Debugging (default: F5)** to build, then debug the program
 - **Tasks: Run Test Task** to run testing/grading script
