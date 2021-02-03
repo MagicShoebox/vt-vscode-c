@@ -1,0 +1,42 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "Build program",
+            "command": "/usr/bin/gcc",
+            "args": [
+                "-Wall",
+                "-Wextra",
+                "-std=c11",
+                "-ggdb3",
+                "*.c",
+                "*.o", // If there are no .o files, delete this line
+                "-o",
+                "${workspaceFolder}/bin/NAME_OF_PROGRAM" // (e.g. c01driver)
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/PATH_TO_SOURCE" // (e.g. dev)
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "type": "shell",
+            "label": "Run tests",
+            "command": "./test.sh",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
+        }
+    ]
+}
