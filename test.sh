@@ -1,14 +1,18 @@
 #! /bin/bash
 
 # SET THESE VARIABLES
-PATH_TO_SOURCE="src"                  # The folder containing the source .c files
-TAR_NAME="PID"                        # The name of the .tar to create (.tar will be appended)
-FILES=("File1.c" "File2.c" "File3.c") # Source files to include in the .tar
+PATH_TO_SOURCE="src"  # The folder containing the source .c files
+TAR_NAME="PID"        # The name of the .tar to create (.tar will be appended)
+FILES=(\              # Source files to include in the .tar
+    "File1.c"\
+    "File2.c"\
+    "File3.c"\
+)
 TEST_FOLDER="testing"                 # The folder containing testing/grading scripts
 TESTS="TESTS.sh"                      # The provided testing/grading script to run
 
 # Create .tar file from modified source files
-tar -cvf "bin/${TAR_NAME}.tar" -C "${PATH_TO_SOURCE}" ${FILES[*]}
+tar -cvf "bin/${TAR_NAME}.tar" -C "${PATH_TO_SOURCE}" $(cd "${PATH_TO_SOURCE}"; echo ${FILES[*]})
 
 # Switch to folder with testing/grading scripts
 cd "${TEST_FOLDER}"
