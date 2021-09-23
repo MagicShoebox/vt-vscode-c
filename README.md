@@ -1,13 +1,10 @@
 # VSCode Configuration for C Development on Linux
 
-## (Optional) One-time Docker Setup
-1. Choose an image_name (e.g. cs2505)
-1. **Run** `docker build -t IMAGE_NAME .`
+## Launching (if using Docker)
+1. Use `Remote-Containers` to build and open the project in container.
 
 ## Per-project Setup
-1. (If using Docker) **Set** `IMAGE_TAG_GOES_HERE` in `devcontainer.json`
-- (Otherwise) You can **delete** `Dockerfile` and `.devcontainer/`
-2. **Set** `NAME_OF_PROGRAM` and `PATH_TO_SOURCE` in `tasks.json`
+1. **Set** `NAME_OF_PROGRAM` and `PATH_TO_SOURCE` in `tasks.json`
 1. (If there are no `.o` files) **Delete** `*.o` line in `tasks.json`
 1. **Set** `NAME_OF_PROGRAM` in `launch.json`
 1. **Set** the variables in `test.sh`
